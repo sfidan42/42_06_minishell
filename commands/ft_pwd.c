@@ -1,4 +1,4 @@
-void	ft_pwd()
+void	main()
 {
 	return ;
 }

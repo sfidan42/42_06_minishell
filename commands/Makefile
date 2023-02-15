@@ -1,7 +1,12 @@
-SRCS	=	$(shell ls -t *.c)
+
 
 all:
-	gcc -c -Werror -Wextra -Wall $(SRCS)
+	gcc ft_ls.c -o ft_ls
+	gcc ft_ls.c -o ft_ls
+	gcc ft_ls.c -o ft_ls
+	gcc ft_ls.c -o ft_ls
+	gcc ft_ls.c -o ft_ls
+	gcc ft_ls.c -o ft_ls
 
 clean:
 	rm -f $(SRCS:.c=.o)

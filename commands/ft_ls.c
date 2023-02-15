@@ -1,4 +1,4 @@
-void	ft_ls()
+void	main()
 {
 	return ;
 }
