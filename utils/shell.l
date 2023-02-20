@@ -35,7 +35,7 @@
 			yylval.string_val = strdup(yytext);
 			return WORD;
 		}
-/* Add more tokens here */
+	/* Add more tokens here */
 .		{
 			/* Invalid character in input */
 			return NOTOKEN;
