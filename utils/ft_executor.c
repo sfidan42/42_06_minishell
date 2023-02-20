@@ -1,6 +1,6 @@
 #include "utils.h"
 
-void	ft_execute(char **execute, char **argw)
+void	ft_executor(char **execute, char **argw)
 {
 	char	*s;
 	char	*eq;
