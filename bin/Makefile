@@ -1,10 +1,11 @@
+BINS	=	ls.c pwd.c
 CFLAGS	=	-Werror -Wextra -Wall
 
 all:
-	gcc ft_ls.c $(CFLAGS) -o ft_ls
-	gcc ft_pwd.c $(CFLAGS) -o ft_pwd
+	gcc ls.c $(CFLAGS) -o ls
+	gcc pwd.c $(CFLAGS) -o pwd
 
 clean:
-	rm -f ft_ls ft_pwd 
+	rm -f $(BINS:.c=)
 
 .PHONY: all clean

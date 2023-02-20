@@ -1,21 +1,5 @@
 #include "utils.h"
-/*
-void	ft_command_choose(char *command)
-{
-	if (command == 0)
-		ft_ls();
-	else if (command == 1)
-		ft_pwd();
-	else if (command == 2)
-		ft_echo();
-	else if (command == 3)
-		ft_cat();
-	else if (command == 4)
-		ft_export();
-	else if (command == 5)
-		ft_exit();
-}
-*/
+
 void	ft_execute(char **execute, char **argw)
 {
 	char	*s;
