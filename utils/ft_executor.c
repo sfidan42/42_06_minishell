@@ -23,7 +23,8 @@ void	ft_executor(char **execute, char **argw)
 	else
 	{
 		printf("You wanted to use some command.");
-		execve("bin/ft_ls", execute, argw);
+		execve("bin/ls", execute, argw);
+		perror("error on execve!\n");
 	}
 	printf("\n");
 }

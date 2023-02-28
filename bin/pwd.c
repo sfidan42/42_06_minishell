@@ -1,7 +1,6 @@
 #include "bin.h"
 
-int	main()
+int	main(void)
 {
-	printf("you used PWD, you fool!\n");
 	return (0);
 }

@@ -13,7 +13,7 @@ $(NAME): $(SRCS)
 	ar rcs $(NAME) $(OBJS)
 
 $(NAME2):
-	@make -C libft
+	@make -C libft bonus
 
 minishell: minishell.c
 	@gcc $(CFLAGS) minishell.c $(NAME) $(NAME2) $(RFLAGS) -o minishell
