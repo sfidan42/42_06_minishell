@@ -39,9 +39,8 @@ $(NAME):
 all: $(NAME)
 
 bonus:
-		$(CC) $(FLAGS) -c $(SRCS)
 		$(CC) $(FLAGS) -c $(BONUS)
-		ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+		ar rc $(NAME) $(BONUS_OBJS)
 
 clean:
 		$(RM) $(OBJS) 
