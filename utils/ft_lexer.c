@@ -15,24 +15,31 @@
 void	ft_print_content(void *content)
 {
 	int		i;
-	char	**xxxx;
+	t_list	*sep;
 
-	xxxx = (char **)content;
+	sep = (t_list *)content;
 	i = 0;
-	while (xxxx[i])
-		printf("___%s___", xxxx[i++]);
+	while (sep)
+	{
+		printf("___%s___", (char *)sep->content);
+		sep = sep->next;
+	}
 	printf("\n");
 }
 
 t_list	*ft_lexer(char *line)
 {
 	t_list	*tree;
+	t_list	*sep;
 	void	*to_free;
-	char	**sep;
 
-	to_free = (sep = ft_split(line, ';'));
-	while (*sep)
-		ft_lstadd_back(&tree, ft_lstnew(ft_split(*sep++, '|')));
+	to_free = (sep = ft_custom_split(line, ';'));
+	while (sep)
+	{
+		ft_lstadd_back(&tree, ft_lstnew(ft_custom_split(sep->content, '|')));
+		sep = sep->next;
+	}
+		
 	free(to_free);
 	ft_lstiter(tree, ft_print_content);
 	return (tree);
