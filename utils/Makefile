@@ -1,5 +1,6 @@
 SRCS	=	$(shell ls -t *.c)
 OBJS	=	$(SRCS:.c=.o)
+CFLAGS	=	-Werror -Wextra -Wall
 
 RED		=	\033[1;31m
 GREEN	=	\033[1;32m
@@ -10,8 +11,8 @@ END		=	\033[0m
 all: $(OBJS)
 	
 %.o: %.c
-	@gcc -c -Werror -Wextra -Wall $< -o $@
-	@printf "$(GREEN)██████"
+	@gcc -c $(CFLAGS) $< -o $@
+	@printf "███ "
 
 clean:
 	@rm -f $(OBJS)

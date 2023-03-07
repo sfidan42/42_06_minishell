@@ -1,4 +1,3 @@
-
 CFLAGS = -Werror -Wextra -Wall
 
 RED = \033[1;31m
@@ -11,11 +10,11 @@ all: pwd
 
 pwd:
 	@gcc $(CFLAGS) pwd.c -o pwd
-	@printf "$(GREEN)██████"
+	@printf "$(GREEN)███ "
 
 ls:
 	@gcc $(CFLAGS) ls.c -o ls
-	@printf "$(GREEN)██████"
+	@printf "$(GREEN)███ "
 
 clean:
 	@rm -f pwd ls
