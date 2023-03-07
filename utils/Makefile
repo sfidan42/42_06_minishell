@@ -11,8 +11,8 @@ END		=	\033[0m
 all: $(OBJS)
 	
 %.o: %.c
+	@printf "$(GREEN)███ "
 	@gcc -c $(CFLAGS) $< -o $@
-	@printf "███ "
 
 clean:
 	@rm -f $(OBJS)

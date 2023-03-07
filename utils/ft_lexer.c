@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lexer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfidan <sfidan@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 18:15:02 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/07 09:52:44 by sfidan           ###   ########.fr       */
+/*   Updated: 2023/03/07 15:38:49 by muerdoga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ t_list	*ft_lexer(char *line)
 		ft_lstadd_back(&tree, ft_lstnew(ft_custom_split(sep->content, '|')));
 		sep = sep->next;
 	}
+	//ft_display_tree(tree);
+	free(to_free);
 	return (tree);
 }

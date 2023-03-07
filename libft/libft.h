@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfidan <sfidan@student.42istanbul.com.tr>  +#+  +:+       +#+        */
+/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:20:50 by sfidan            #+#    #+#             */
-/*   Updated: 2022/07/28 12:21:55 by sfidan           ###   ########.fr       */
+/*   Updated: 2023/03/07 16:14:47 by muerdoga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	int				type;
 }					t_list;
 
 void	ft_bzero(void *s, size_t n);

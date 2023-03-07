@@ -8,14 +8,14 @@ END = \033[0m
 
 all: pwd
 
-pwd:
+pwd: bar
 	@gcc $(CFLAGS) pwd.c -o pwd
-	@printf "$(GREEN)███ "
 
-ls:
-	@gcc $(CFLAGS) ls.c -o ls
+bar:
 	@printf "$(GREEN)███ "
 
 clean:
-	@rm -f pwd ls
+	@rm -f pwd
 	@printf "$(RED)bin clean\n$(END)"
+
+.PHONY: all bar clean

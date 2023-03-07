@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_bckslh.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfidan <sfidan@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:52:29 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/07 09:53:24 by sfidan           ###   ########.fr       */
+/*   Updated: 2023/03/07 17:22:32 by muerdoga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "util.h"
+#include "utils.h"
 
 int	ft_is_bckslh(char *line, int i)
 {

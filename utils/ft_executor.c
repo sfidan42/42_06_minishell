@@ -6,37 +6,60 @@
 /*   By: sfidan <sfidan@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:48:52 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/07 09:58:29 by sfidan           ###   ########.fr       */
+/*   Updated: 2023/03/07 19:34:25 by sfidan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+/*
+◦ echo with option -n
+◦ cd with only a relative or absolute path
+◦ pwd with no options
+◦ export with no options
+◦ unset with no options
+◦ env with no options or arguments
+◦ exit with no options
+*/
 
-void	ft_executor(char **execute, char **argw)
+void	ft_fork(char *exec)
 {
-	char	*s;
-	char	*eq;
-	char	*sl;
-
-	s = execute[0];
-	eq = ft_strchr(s, '=');
-	sl = ft_strchr(s, '/');
-	if (eq)
+	pid_t	pid;
+	
+	pid = fork();
+	if (pid < 0)
 	{
-		s = ft_substr(s, 0, eq - s);
-		printf("You wanted to assign %s to %s", eq + 1, s);
-		free(s);
+		perror("fork");
+		exit(EXIT_FAILURE);
 	}
-	else if (sl)
+	if (pid == 0)
 	{
-		printf("You meant to use bin program!");
-		execve(execute[0], execute, argw);
-		perror("error on execve!\n");
+		char **args = ft_split(exec, ' ');
+		execvp(args[0], args);
+		perror(args[0]);
+		exit(EXIT_FAILURE);
 	}
 	else
 	{
-		printf("You wanted to use some command.");
-		execve("bin/ls", execute, argw);
-		perror("error on execve!\n");
+		wait(NULL);
+	}
+}
+
+
+void	ft_executor(t_list *tree, char **env)
+{
+	t_list	*branch;
+	char	**args;
+
+	(void)env;
+	while (tree)
+	{
+		branch = (t_list *)tree->content;
+		while (branch)
+		{
+			args = ft_split(branch->content, ' ');
+			ft_fork(branch->content);
+			branch = branch->next;
+		}
+		tree = tree->next;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_syntax_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfidan <sfidan@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:37:40 by muerdoga          #+#    #+#             */
-/*   Updated: 2023/03/07 09:54:42 by sfidan           ###   ########.fr       */
+/*   Updated: 2023/03/07 17:22:41 by muerdoga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
