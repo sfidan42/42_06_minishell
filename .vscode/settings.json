@@ -1,0 +1,10 @@
+{
+	"C_Cpp.errorSquiggles": "disabled",
+	"files.associations": {
+		"__nullptr": "c",
+		"utils.h": "c"
+	},
+	"[c]": {
+		"editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
+	  }
+}

@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bin.h                                              :+:      :+:    :+:   */
+/*   ft_is_bckslh.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfidan <sfidan@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 09:48:31 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/07 09:48:36 by sfidan           ###   ########.fr       */
+/*   Created: 2023/03/07 09:52:29 by sfidan            #+#    #+#             */
+/*   Updated: 2023/03/07 09:53:24 by sfidan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BIN_H
-# define BIN_H
-# include "../libft/libft.h"
-# include "stdio.h"
+#include "util.h"
 
-# define STDIN 0
-# define STDOUT 1
-# define STDERR 2
-
-#endif
+int	ft_is_bckslh(char *line, int i)
+{
+	if (i == 0)
+		return (0);
+	return (line[i - 1] == '\\');
+}

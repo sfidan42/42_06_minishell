@@ -6,13 +6,12 @@
 /*   By: sfidan <sfidan@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 18:15:16 by sfidan            #+#    #+#             */
-/*   Updated: 2023/02/28 18:16:41 by sfidan           ###   ########.fr       */
+/*   Updated: 2023/03/07 09:54:17 by sfidan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-void	ft_expander()
+void	ft_expander(void)
 {
-	;
 }

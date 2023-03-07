@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lexer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: sfidan <sfidan@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 18:15:02 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/01 18:27:19 by muerdoga         ###   ########.fr       */
+/*   Updated: 2023/03/07 09:52:44 by sfidan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ t_list	*ft_lexer(char *line)
 	t_list	*tree;
 	t_list	*sep;
 	void	*to_free;
-	
 
 	tree = NULL;
 	sep = ft_custom_split(line, ';');

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: sfidan <sfidan@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:40:14 by muerdoga          #+#    #+#             */
-/*   Updated: 2023/03/01 19:43:40 by muerdoga         ###   ########.fr       */
+/*   Updated: 2023/03/07 09:47:58 by sfidan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,16 @@ void	ft_minishell(char *line, char *prompt)
 	while (42)
 	{
 		line = readline(prompt);
-		{
-			add_history(line);
-			rl_replace_line("", 0);
-			rl_redisplay();
-		}
 		if (!line)
 		{
 			printf("Exiting minishell...\n");
 			break ;
+		}
+		if (*line)
+		{
+			add_history(line);
+			rl_replace_line("", 0);
+			rl_redisplay();
 		}
 		ft_syntax_check(line);
 		tree = ft_lexer(line);

@@ -3,26 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_syntax_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: sfidan <sfidan@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:37:40 by muerdoga          #+#    #+#             */
-/*   Updated: 2023/03/01 18:39:34 by muerdoga         ###   ########.fr       */
+/*   Updated: 2023/03/07 09:54:42 by sfidan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int	ft_is_bckslh(char *line, int i)
+int	ft_check_quotes(char *line)
 {
-	if (i == 0)
-		return (0);
-	return (line[i - 1] == '\\');
-}
-
-int ft_check_quotes(char *line)
-{
-	int flag;
-	int i;
+	int	flag;
+	int	i;
 
 	flag = 0;
 	i = 0;
