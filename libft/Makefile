@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sfidan <sfidan@student.42istanbul.com.tr>  +#+  +:+       +#+         #
+#    By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 12:54:28 by sfidan            #+#    #+#              #
-#    Updated: 2022/07/25 11:29:28 by sfidan           ###   ########.fr        #
+#    Updated: 2023/03/01 20:29:56 by muerdoga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,22 +32,34 @@ CC	=	gcc
 RM	=	rm -f
 FLAGS	= -Wall -Wextra -Werror
 
+RED = \033[1;31m
+GREEN = \033[1;32m
+YELLOW = \033[1;33m
+CYAN = \033[1;36m
+END = \033[0m
+
 $(NAME): 
-		$(CC) $(FLAGS) -c $(SRCS) 
-		ar rc $(NAME) $(OBJS)
+		@$(CC) $(FLAGS) -c $(SRCS) 
+		@ar rc $(NAME) $(OBJS)
 
 all: $(NAME)
 
+%.o: %.c		@gcc -c -Werror -Wextra -Wall $< -o $@
+		@printf "$(GREEN)██████"
+
 bonus:
-		$(CC) $(FLAGS) -c $(BONUS)
-		ar rc $(NAME) $(BONUS_OBJS)
+		@$(CC) $(FLAGS) -c $(SRCS)
+		@$(CC) $(FLAGS) -c $(BONUS)
+		@ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
-		$(RM) $(OBJS) 
-		$(RM) $(BONUS_OBJS)
+		@$(RM) $(OBJS) 
+		@$(RM) $(BONUS_OBJS)
+		@printf "$(RED)libft clean\n$(END)"
+
 
 fclean: clean
-		$(RM) $(NAME)
+		@$(RM) $(NAME)
 
 re: fclean all
 

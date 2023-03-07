@@ -6,7 +6,7 @@
 /*   By: sfidan <sfidan@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:20:50 by sfidan            #+#    #+#             */
-/*   Updated: 2023/01/16 00:00:24 by sadettin         ###   ########.fr       */
+/*   Updated: 2022/07/28 12:21:55 by sfidan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdint.h>
 
 typedef struct s_list
 {

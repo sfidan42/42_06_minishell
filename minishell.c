@@ -1,40 +1,83 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/01 15:40:14 by muerdoga          #+#    #+#             */
+/*   Updated: 2023/03/01 19:43:40 by muerdoga         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
-static void	ft_signal_handler(int sig)
+void	ft_sig_handler(int sig)
 {
 	if (sig == SIGINT)
-		write(STDOUT, "\n\033[0;32m⛄️minishell $>\033[0;37m", 34);
+	{
+		rl_replace_line("", 0);
+		printf("\n");
+		rl_on_new_line();
+		rl_redisplay();
+	}
 }
 
-int	main(int argc, char **argv, char **argw)
+void	ft_minishell(char *line, char *prompt)
 {
-	char	*line;
-	int 	ctrl;
 	t_list	*tree;
 
-	(void)argv;
-	(void)argw;
-	line = malloc(4096);
+	while (42)
+	{
+		line = readline(prompt);
+		{
+			add_history(line);
+			rl_replace_line("", 0);
+			rl_redisplay();
+		}
+		if (!line)
+		{
+			printf("Exiting minishell...\n");
+			break ;
+		}
+		ft_syntax_check(line);
+		tree = ft_lexer(line);
+		free(line);
+	}
+}
+
+char	**ft_cpy_env(char **env)
+{
+	int		i;
+	int		len;
+	char	**cpy;
+
+	len = 0;
+	while (env[len])
+		len++;
+	cpy = malloc(sizeof(char *) * len + 1);
+	i = 0;
+	while (*env)
+		cpy[i++] = ft_strdup(*env++);
+	cpy[i] = NULL;
+	return (cpy);
+}
+
+int	main(int argc, char **argv, char **env)
+{
+	char	*line;
+	char	**cpy_env;
+
+	line = NULL;
+	signal(SIGQUIT, ft_sig_handler);
+	signal(SIGINT, ft_sig_handler);
 	if (argc != 1)
 	{
-		printf("What am I supposed to do with \"%s, ...\"??\n", argv[1]);
+		printf("What am I supposed to do withclear \"%s, ...\"??\n", argv[1]);
 		return (EXIT_FAILURE);
 	}
-	printf("Hi, this is the minishell project!\n");
-	signal(SIGQUIT, ft_signal_handler);
-	signal(SIGINT, ft_signal_handler);
-	while(42)
-	{
-		write(STDOUT, "\033[0;32m⛄️minishell $>\033[0;37m", 33);
-		ctrl = read(STDOUT, line, 4096);
-		if (ctrl < 0)
-			perror("read");
-		if (!ctrl)
-		{
-			printf("👋\n");
-			return (EXIT_SUCCESS);
-		}
-		tree = ft_lexer(line);
-	}
+	ft_intro();
+	cpy_env = ft_cpy_env(env);
+	ft_minishell(line, "\033[1;32m🔥minishell $>\033[0;37m");
 	return (EXIT_SUCCESS);
 }
