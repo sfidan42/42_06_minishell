@@ -14,7 +14,7 @@
 
 t_list	*ft_parse(t_list *branch, char *meta_set)
 {
-	char	c;
+	char	*str;
 	t_list	*new;
 	t_list	*aux;
 
@@ -22,8 +22,10 @@ t_list	*ft_parse(t_list *branch, char *meta_set)
 	new = malloc(sizeof(t_parse));	
 	while (branch)
 	{
-		c = *(char *)branch->content;
-		if ( == '|')
+		str = (char *)branch->content;
+		if (*str == '>')
+			if ()
+		if (*str == '|')
 			ft_lstadd_back(&aux, malloc(sizeof(t_parse)));
 		branch = branch->next;
 	}
