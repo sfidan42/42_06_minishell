@@ -12,35 +12,50 @@
 
 #include "utils.h"
 
-t_list	*ft_custom_split(char *line, char c)
+t_list	*ft_custom_split(char *line, char **set)
 {
-	t_list				*ans;
-	char 				*to_free;
-	t_custom_split_vars	v;
-	
-	ans = __DARWIN_NULL;
-	v = *(t_custom_split_vars *)ft_calloc(sizeof(t_custom_split_vars), 1);
-	while (line[v.i])
+	int		flag;
+	int		i;
+	char	*sub;
+	t_list	*ans;
+	t_list	*indexes;
+
+	indexes = ft_lstnew(line);
+	flag = 0;
+	while (*line)
 	{
-		if (v.flag == 0 && line[v.i] == '\'' && !ft_is_bckslh(line, v.i))
-			v.flag = 1;
-		else if (v.flag == 0 && line[v.i] == '\"' && !ft_is_bckslh(line, v.i))
-			v.flag = 2;
-		else if (v.flag == 2 && line[v.i] == '\"' && !ft_is_bckslh(line, v.i))
-			v.flag = 0;
-		else if (v.flag == 1 && line[v.i] == '\'' && !ft_is_bckslh(line, v.i))
-			v.flag = 0;
-		if (line[v.i] == c && v.flag == 0 && line[v.i - 1] != '\\')
+		if (flag == 0 && *line == '\'' && *(line - 1) != '\\')
+			flag = 1;
+		else if (flag == 0 && *line == '\"' && *(line - 1) != '\\')
+			flag = 2;
+		else if (flag == 2 && *line == '\"' && *(line - 1) != '\\')
+			flag = 0;
+		else if (flag == 1 && *line == '\'' && *(line - 1) != '\\')
+			flag = 0;
+		if (flag == 0)
 		{
-			to_free = ft_substr(line, v.j, v.i - v.j);
-			ft_lstadd_back(&ans, ft_lstnew(ft_strtrim(to_free, " \t")));
-			free(to_free);
-			v.j = v.i + 1;
+			i = 0;
+			while (set[i])
+			{
+				if (!ft_strncmp(line, set[i], ft_strlen(set[i])))
+				{
+					ft_lstadd_back(&indexes, ft_lstnew(line));
+					while (!ft_strncmp(line, set[i], ft_strlen(set[i])))
+						line++;
+					ft_lstadd_back(&indexes, ft_lstnew(line));
+				}
+				i++;
+			}
 		}
-		v.i++;
+		line++;
 	}
-	to_free = ft_substr(line, v.j, v.i - v.j);
-	ft_lstadd_back(&ans, ft_lstnew(ft_strtrim(to_free, " \t")));
-	free(to_free);
+	ft_lstadd_back(&indexes, ft_lstnew(line));
+	ans = NULL;
+	while (indexes->next)
+	{
+		sub = ft_substr(indexes->content, 0, indexes->next->content - indexes->content);
+		ft_lstadd_back(&ans, ft_lstnew(sub));
+		indexes = indexes->next;
+	}
 	return (ans);
 }

@@ -15,21 +15,19 @@
 int	ft_check_quotes(char *line)
 {
 	int	flag;
-	int	i;
 
 	flag = 0;
-	i = 0;
-	while (line[i])
+	while (*line)
 	{
-		if (flag == 0 && line[i] == '\'' && !ft_is_bckslh(line, i))
+		if (flag == 0 && *line == '\'' && *(line - 1) != '\\')
 			flag = 1;
-		else if (flag == 0 && line[i] == '\"' && !ft_is_bckslh(line, i))
+		else if (flag == 0 && *line == '\"' && *(line - 1) != '\\')
 			flag = 2;
-		else if (flag == 2 && line[i] == '\"' && !ft_is_bckslh(line, i))
+		else if (flag == 2 && *line == '\"' && *(line - 1) != '\\')
 			flag = 0;
-		else if (flag == 1 && line[i] == '\'' && !ft_is_bckslh(line, i))
+		else if (flag == 1 && *line == '\'' && *(line - 1) != '\\')
 			flag = 0;
-		i++;
+		line++;
 	}
 	return (flag);
 }

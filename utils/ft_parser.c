@@ -39,7 +39,6 @@ t_list	*ft_parser(t_list *tree)
 		branch = (t_list *)aux->content;
 		while(branch)
 		{
-			branch->type = ft_type((char *)branch->content);
 			branch = branch->next;
 		}	
 		aux = aux->next;

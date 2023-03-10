@@ -6,7 +6,7 @@
 /*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:40:14 by muerdoga          #+#    #+#             */
-/*   Updated: 2023/03/07 15:55:18 by muerdoga         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:17:00 by muerdoga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char	**ft_cpy_env(char **env)
 
 void	ft_minishell(char *line, char **envp)
 {
+	(void)envp;
 	t_list	*tree;
 	while (42)
 	{
@@ -43,13 +44,13 @@ void	ft_minishell(char *line, char **envp)
 		if (*line)
 		{
 			add_history(line);
-			rl_replace_line("", 0);
-			rl_redisplay();
+			//rl_replace_line("", 0);
+			//rl_redisplay();
 		}
 		ft_syntax_check(line);
 		tree = ft_lexer(line);
-		tree = ft_parser(tree);
-		ft_executor(tree, envp);
+		//tree = ft_parser(tree);
+		//ft_executor(tree, envp);
 		free(line);
 	}
 }
@@ -58,7 +59,7 @@ void	ft_sig_handler(int sig)
 {
 	if (sig == SIGINT)
 	{
-		rl_replace_line("", 0);
+		//rl_replace_line("", 0);
 		printf("\n");
 		rl_on_new_line();
 		rl_redisplay();

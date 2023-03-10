@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bin.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfidan <sfidan@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:48:31 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/07 09:48:36 by sfidan           ###   ########.fr       */
+/*   Updated: 2023/03/08 15:27:27 by muerdoga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 # include "../libft/libft.h"
 # include "stdio.h"
 
-# define STDIN 0
-# define STDOUT 1
-# define STDERR 2
+# define BUFFER_SIZE 1024
 
 #endif

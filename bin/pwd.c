@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   pwd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sfidan <sfidan@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:48:38 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/07 09:48:50 by sfidan           ###   ########.fr       */
+/*   Updated: 2023/03/08 14:56:56 by muerdoga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bin.h"
 
-int	main(void)
+int	main(int c, char **argv, char **argw)
 {
+	(void)c;
+	printf("buffer: ___%s___\n", argv[1]);
+	(void)argw;
 	return (0);
 }
