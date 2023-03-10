@@ -18,8 +18,9 @@
 
 typedef struct s_parse
 {
-	int	fd_infile;
-	int	fd_outfile;
+	int		fd_infile;
+	int		fd_outfile;
+	char	*argv;
 }	t_parse;
 
 
