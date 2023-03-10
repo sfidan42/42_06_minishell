@@ -44,13 +44,14 @@ void	ft_minishell(char *line, char **envp)
 		if (*line)
 		{
 			add_history(line);
-			//rl_replace_line("", 0);
-			//rl_redisplay();
+			rl_replace_line("", 0);
+			rl_redisplay();
 		}
 		ft_syntax_check(line);
 		tree = ft_lexer(line);
 		//tree = ft_parser(tree);
 		//ft_executor(tree, envp);
+		free(tree);
 		free(line);
 	}
 }
@@ -59,7 +60,7 @@ void	ft_sig_handler(int sig)
 {
 	if (sig == SIGINT)
 	{
-		//rl_replace_line("", 0);
+		rl_replace_line("", 0);
 		printf("\n");
 		rl_on_new_line();
 		rl_redisplay();

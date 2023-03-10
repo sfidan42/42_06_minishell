@@ -13,7 +13,7 @@
 #ifndef BIN_H
 # define BIN_H
 # include "../libft/libft.h"
-# include "stdio.h"
+# include <stdio.h>
 
 # define BUFFER_SIZE 1024
 

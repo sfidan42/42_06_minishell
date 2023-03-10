@@ -12,7 +12,12 @@
 
 #include "utils.h"
 
-t_list	*ft_custom_split(char *line, char **set)
+void	f(void *content)
+{
+	printf("%s\n", (char *)content);
+}
+
+t_list	*ft_custom_split(char *line, char *set)
 {
 	int		flag;
 	int		i;
@@ -37,12 +42,12 @@ t_list	*ft_custom_split(char *line, char **set)
 			i = 0;
 			while (set[i])
 			{
-				if (!ft_strncmp(line, set[i], ft_strlen(set[i])))
+				if (*line == set[i] && *(line - 1) != '\\')
 				{
 					ft_lstadd_back(&indexes, ft_lstnew(line));
-					while (!ft_strncmp(line, set[i], ft_strlen(set[i])))
+					while (*line == set[i])
 						line++;
-					ft_lstadd_back(&indexes, ft_lstnew(line));
+					ft_lstadd_back(&indexes, ft_lstnew(line--));
 				}
 				i++;
 			}
@@ -50,12 +55,17 @@ t_list	*ft_custom_split(char *line, char **set)
 		line++;
 	}
 	ft_lstadd_back(&indexes, ft_lstnew(line));
+	//ft_lstiter(indexes, f);
 	ans = NULL;
 	while (indexes->next)
 	{
-		sub = ft_substr(indexes->content, 0, indexes->next->content - indexes->content);
-		ft_lstadd_back(&ans, ft_lstnew(sub));
+		if (indexes->next->content - indexes->content && *(char *)indexes->content != ' ')
+		{
+			sub = ft_substr(indexes->content, 0, indexes->next->content - indexes->content);
+			ft_lstadd_back(&ans, ft_lstnew(sub));
+		}	
 		indexes = indexes->next;
 	}
+	free(indexes);
 	return (ans);
 }

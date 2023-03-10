@@ -16,24 +16,12 @@ t_list	*ft_lexer(char *line)
 {
 	t_list	*tree;
 	t_list	*sep;
-	char	*semi[2];
-	char	*meta_set[7];
 
-	semi[0] = ";";
-	semi[1] = NULL;
-	meta_set[0] = " ";
-	meta_set[1] = ">";
-	meta_set[2] = ">>";
-	meta_set[3] = "<";
-	meta_set[4] = "<<";
-	meta_set[5] = "|";
-	meta_set[6] = NULL;
-
-	sep = ft_custom_split(line, semi);
+	sep = ft_custom_split(line, ";");
 	tree = NULL;
 	while (sep)
 	{
-		ft_lstadd_back(&tree, ft_lstnew(ft_custom_split(sep->content, meta_set)));
+		ft_lstadd_back(&tree, ft_lstnew(ft_custom_split(sep->content, " <|>")));
 		sep = sep->next;
 	}
 	ft_display_tree(tree);

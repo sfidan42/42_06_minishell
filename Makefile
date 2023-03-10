@@ -1,3 +1,5 @@
+MAKEFLAGS += --no-print-directory
+
 SRCS	=	$(shell ls -t utils/*.c)
 OBJS	=	$(SRCS:.c=.o)
 NAME	=	minishell.a
