@@ -16,6 +16,13 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 
+typedef struct s_parse
+{
+	int	fd_infile;
+	int	fd_outfile;
+}	t_parse;
+
+
 // main utils
 void	ft_intro(void);
 t_list	*ft_lexer(char *line);
@@ -27,7 +34,7 @@ void	ft_executor(t_list *tree, char **env);
 // General
 t_list	*ft_custom_split(char *line, char *set);
 int		ft_quote_backslash(char *line, int i);
-void	ft_display_tree(t_list *tree);
+void	ft_print_lexer(t_list *tree);
 void	ft_syntax_check(char *line);
 
 #endif
