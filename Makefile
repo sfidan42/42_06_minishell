@@ -1,17 +1,17 @@
-MAKEFLAGS += --no-print-directory
+MAKEFLAGS	+=	--no-print-directory
 
-SRCS	=	$(shell ls -t utils/*.c)
-OBJS	=	$(SRCS:.c=.o)
-NAME	=	minishell.a
-NAME2	=	libft/libft.a
-CFLAGS	=	-Werror -Wextra -Wall
-RFLAGS	=	-I$(HOME)/local/include -L$(HOME)/local/lib -lreadline
+SRCS		=	$(shell ls -t utils/*.c)
+OBJS		=	$(SRCS:.c=.o)
+NAME		=	minishell.a
+NAME2		=	libft/libft.a
+CFLAGS		=	-Werror -Wextra -Wall
+RFLAGS		=	-I$(HOME)/local/include -L$(HOME)/local/lib -lreadline
 
-RED		=	\033[1;31m
-GREEN	=	\033[1;32m
-YELLOW	=	\033[1;33m
-CYAN	=	\033[1;36m
-END		=	\033[0m
+RED			=	\033[1;31m
+GREEN		=	\033[1;32m
+YELLOW		=	\033[1;33m
+CYAN		=	\033[1;36m
+END			=	\033[0m
 
 all: $(NAME2) $(NAME) minishell
 
