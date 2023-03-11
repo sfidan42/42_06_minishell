@@ -12,35 +12,23 @@
 
 #include "utils.h"
 
-t_list	*ft_parse(t_list *branch, char *meta_set)
+t_list	*ft_parse(t_list *branch)
 {
-	char	*str;
-	t_list	*new;
-	t_list	*aux;
-
-	aux = new;
-	new = malloc(sizeof(t_parse));	
 	while (branch)
 	{
-		str = (char *)branch->content;
-		if (*str == '>')
-			if ()
-		if (*str == '|')
-			ft_lstadd_back(&aux, malloc(sizeof(t_parse)));
 		branch = branch->next;
 	}
-	return (new);
+	return (branch);
 }
 
 t_list	*ft_parser(t_list *tree)
 {
 	t_list	*aux;
-	t_list	*branch;
-	
+
 	aux = tree;
 	while (aux)
 	{
-		aux->content = ft_parse((t_list *)aux->content)		
+		//aux->content = ft_parse((t_list *)aux->content);
 		aux = aux->next;
 	}
 	ft_display_tree(tree);

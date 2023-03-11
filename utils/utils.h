@@ -35,7 +35,7 @@ void	ft_executor(t_list *tree, char **env);
 // General
 t_list	*ft_custom_split(char *line, char *set);
 int		ft_quote_backslash(char *line, int i);
-void	ft_print_lexer(t_list *tree);
+void	ft_display_tree(t_list *tree);
 void	ft_syntax_check(char *line);
 
 #endif

@@ -59,9 +59,10 @@ t_list	*ft_custom_split(char *line, char *set)
 	ans = NULL;
 	while (indexes->next)
 	{
-		if (indexes->next->content - indexes->content && *(char *)indexes->content != ' ')
+		i = indexes->next->content - indexes->content;
+		if (i)
 		{
-			sub = ft_substr(indexes->content, 0, indexes->next->content - indexes->content);
+			sub = ft_substr(indexes->content, 0, i);
 			ft_lstadd_back(&ans, ft_lstnew(sub));
 		}	
 		indexes = indexes->next;

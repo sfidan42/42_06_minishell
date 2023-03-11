@@ -14,9 +14,6 @@
 
 t_list	*ft_lexer(char *line)
 {
-	int		i;
-	int		len;
-	char	**lex;
 	t_list	*tree;
 	t_list	*sep;
 
@@ -28,12 +25,5 @@ t_list	*ft_lexer(char *line)
 		sep = sep->next;
 	}
 	ft_display_tree(tree);
-	len = ft_lstsize(tree);
-	lex = malloc(len + 1);
-	i = 0;
-	while (i < len)
-	{
-		lex[i++] = ft_strdup(tree);
-	}
 	return (tree);
 }
