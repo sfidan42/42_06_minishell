@@ -49,7 +49,8 @@ void	ft_minishell(char *line, char **envp)
 		}
 		ft_syntax_check(line);
 		tree = ft_lexer(line);
-		//tree = ft_parser(tree);
+		tree = ft_parser(tree);
+		tree = ft_expander(tree);
 		//ft_executor(tree, envp);
 		free(tree);
 		free(line);

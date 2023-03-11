@@ -1,6 +1,6 @@
 #include "utils.h"
 
-void	ft_display_tree(t_list *tree)
+void	ft_display_lexer(t_list *tree)
 {
 	t_list	*content;
 	

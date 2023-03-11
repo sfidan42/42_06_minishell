@@ -12,6 +12,7 @@
 
 #include "utils.h"
 
-void	ft_expander(void)
+t_list  *ft_expander(t_list *tree)
 {
+    return (tree);
 }

@@ -24,6 +24,6 @@ t_list	*ft_lexer(char *line)
 		ft_lstadd_back(&tree, ft_lstnew(ft_custom_split(sep->content, "\t >|<")));
 		sep = sep->next;
 	}
-	ft_display_tree(tree);
+	ft_display_lexer(tree);
 	return (tree);
 }
