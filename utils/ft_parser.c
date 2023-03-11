@@ -18,6 +18,7 @@ t_list	*ft_parser(t_list *tree)
 	char	**new;
 	t_list	*new_branch;
 	t_list	*branch;
+	t_list	*branch_aux;
 	char	**args;
 	int		i;
 	int		len;
@@ -30,7 +31,13 @@ t_list	*ft_parser(t_list *tree)
 		branch = (t_list *)aux->content;
 		while (branch)
 		{
-			len = ft_lstfind(branch, "|");
+			branch_aux = branch;
+			len = 0;
+			while (ft_strncmp((char *)branch_aux->content, "|", 1))
+			{
+				len++;
+				branch_aux = branch_aux->next;
+			}
 			new = malloc(sizeof(char *) * (len + 1));
 			i = 0;
 			while (i < len)
