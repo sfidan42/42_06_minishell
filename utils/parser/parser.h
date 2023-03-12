@@ -6,8 +6,8 @@
 
 typedef struct s_parse
 {
-	int		fd_infile;
-	int		fd_outfile;
+	int		fd_in;
+	int		fd_out;
 	char	**argv;
 	char	*eof;
 }			t_parse;

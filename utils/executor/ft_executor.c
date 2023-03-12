@@ -6,13 +6,11 @@
 /*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:48:52 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/12 23:39:54 by sadettin         ###   ########.fr       */
+/*   Updated: 2023/03/13 01:47:39 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "executor.h"
-
-
 
 void	ft_executor(t_list *tree, char **env)
 {

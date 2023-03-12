@@ -6,7 +6,7 @@
 /*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:40:14 by muerdoga          #+#    #+#             */
-/*   Updated: 2023/03/13 01:33:41 by sadettin         ###   ########.fr       */
+/*   Updated: 2023/03/13 01:49:11 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ char	**ft_cpy_env(char **env)
 
 void	ft_minishell(char *line, char **envp)
 {
-	(void)envp;
 	t_list	*tree;
+
 	while (42)
 	{
 		line = readline("\033[1;32m🔥minishell $>\033[0;37m");
@@ -53,6 +53,7 @@ void	ft_minishell(char *line, char **envp)
 		tree = ft_parser(tree);
 		ft_display_parser(tree);
 		tree = ft_expander(tree);
+		(void)envp;
 		//ft_executor(tree, envp);
 		free(tree);
 		free(line);

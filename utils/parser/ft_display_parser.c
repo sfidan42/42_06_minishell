@@ -8,10 +8,10 @@ void	ft_display_parser(t_list *tree)
 	t_parse	parse;
 
 	while (tree)
-    {
+	{
 		i = 0;
 		branch = (t_list *)tree->content;
-		while(branch)
+		while (branch)
 		{
 			parse = *(t_parse *)branch->content;
 			printf("node %d:\n", i++);
