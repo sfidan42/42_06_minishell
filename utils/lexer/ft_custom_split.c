@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_custom_split.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:13:47 by muerdoga          #+#    #+#             */
-/*   Updated: 2023/03/07 17:22:20 by muerdoga         ###   ########.fr       */
+/*   Updated: 2023/03/12 23:35:19 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "lexer.h"
 
 void	f(void *content)
 {

@@ -1,6 +1,6 @@
 MAKEFLAGS	+=	--no-print-directory
 
-SRCS		=	$(shell ls -t utils/*.c)
+SRCS		=	$(shell ls -t utils/*.c utils/*/*.c)
 OBJS		=	$(SRCS:.c=.o)
 NAME		=	minishell.a
 NAME2		=	libft/libft.a

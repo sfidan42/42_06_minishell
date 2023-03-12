@@ -6,11 +6,11 @@
 /*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 18:15:02 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/12 23:16:32 by sadettin         ###   ########.fr       */
+/*   Updated: 2023/03/12 23:35:24 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "lexer.h"
 
 t_list	*ft_lexer(char *line)
 {

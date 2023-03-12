@@ -1,4 +1,4 @@
-SRCS	=	$(shell ls -t *.c)
+SRCS	=	$(shell ls *.c */*.c)
 OBJS	=	$(SRCS:.c=.o)
 CFLAGS	=	-Werror -Wextra -Wall
 
