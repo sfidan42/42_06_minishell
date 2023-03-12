@@ -6,7 +6,7 @@
 /*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:52:45 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/13 00:01:52 by sadettin         ###   ########.fr       */
+/*   Updated: 2023/03/13 01:33:34 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_parser(t_list *tree)
 	aux = tree;
 	while (aux)
 	{
-		//aux->content = ft_parsed((char **)aux->content);
+		aux->content = ft_parsed((char **)aux->content);
 		aux = aux->next;
 	}
 	return (tree);

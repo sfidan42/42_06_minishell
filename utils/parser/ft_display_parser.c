@@ -10,13 +10,14 @@ void	ft_display_parser(t_list *tree)
 	while (tree)
     {
 		i = 0;
-		branch = *(t_list *)tree->content;
+		branch = (t_list *)tree->content;
 		while(branch)
 		{
-			parse = *(t_parse)branch->content;
+			parse = *(t_parse *)branch->content;
 			printf("node %d:\n", i++);
 			printf("fd of input file: %d\n", parse.fd_infile);
 			printf("fd of output file: %d\n", parse.fd_outfile);
+			printf("argv: ");
 			argv = parse.argv;
 			while (*argv)
 				printf("%s ", *argv++);

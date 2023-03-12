@@ -2,11 +2,11 @@
 
 t_parse	*ft_new_parse(void)
 {
-	t_parse	*parse;
+	t_parse	*p;
 
-	parse = malloc(sizoef(t_parse));
-	parse->fd_infile = STDIN_FILENO;
-	parse->fd_outfile = STDOUT_FILENO;
-	parse->args = NULL;
-	return (parse);
+	p = malloc(sizeof(t_parse));
+	p->fd_infile = STDIN_FILENO;
+	p->fd_outfile = STDOUT_FILENO;
+	p->argv = NULL;
+	return (p);
 }

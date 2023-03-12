@@ -6,7 +6,7 @@
 /*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:40:14 by muerdoga          #+#    #+#             */
-/*   Updated: 2023/03/12 23:50:24 by sadettin         ###   ########.fr       */
+/*   Updated: 2023/03/13 01:33:41 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_minishell(char *line, char **envp)
 		tree = ft_lexer(line);
 		ft_display_lexer(tree);
 		tree = ft_parser(tree);
-		//ft_display_parser(tree);
+		ft_display_parser(tree);
 		tree = ft_expander(tree);
 		//ft_executor(tree, envp);
 		free(tree);

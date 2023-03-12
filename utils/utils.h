@@ -6,7 +6,7 @@
 /*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:54:44 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/12 23:32:46 by sadettin         ###   ########.fr       */
+/*   Updated: 2023/03/13 01:08:41 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "parser/parser.h"
 # include "expander/expander.h"
 # include "executor/executor.h"
-# include <fcntl.h>
 # include <readline/readline.h>
 # include <readline/history.h>
 
