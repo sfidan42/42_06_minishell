@@ -32,11 +32,11 @@ t_list  *ft_expander(t_list *tree);
 void	ft_executor(t_list *tree, char **env);
 
 // helper utils
-// General
 t_list	*ft_custom_split(char *line, char *set);
 int		ft_quote_backslash(char *line, int i);
 void	ft_display_lexer(t_list *tree);
 void	ft_display_parser(t_list *tree);
 void	ft_syntax_check(char *line);
+char	**ft_list_to_str(t_list *lst);
 
 #endif

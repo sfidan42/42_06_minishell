@@ -7,10 +7,10 @@ void	ft_display_parser(t_list *tree)
 	while (tree)
     {
 		content = (char **)tree->content;
-		while(content)
+		while(*content)
 			printf("(%s) ", *content++);
 		printf("\n");
 		tree = tree->next;
 	}
-	printf("\n");
+	ft_putchar_fd('\n', 1);
 }

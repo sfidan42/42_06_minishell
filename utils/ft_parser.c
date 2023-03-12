@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:52:45 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/07 16:23:10 by muerdoga         ###   ########.fr       */
+/*   Updated: 2023/03/12 22:52:39 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,42 +15,14 @@
 t_list	*ft_parser(t_list *tree)
 {
 	t_list	*aux;
-	char	**new;
-	t_list	*new_branch;
-	t_list	*branch;
-	t_list	*branch_aux;
-	char	**args;
-	int		i;
-	int		len;
+	void	*to_free;
 
-	(void)args;
 	aux = tree;
 	while (aux)
 	{
-		new_branch = NULL;
-		branch = (t_list *)aux->content;
-		while (branch)
-		{
-			branch_aux = branch;
-			len = 0;
-			while (ft_strncmp((char *)branch_aux->content, "|", 1))
-			{
-				len++;
-				branch_aux = branch_aux->next;
-			}
-			new = malloc(sizeof(char *) * (len + 1));
-			i = 0;
-			while (i < len)
-			{
-				new[i] = (char *)branch->content;
-				branch = branch->next;
-				i++;
-			}
-			new[i] = NULL;
-			ft_lstadd_back(&new_branch, ft_lstnew(new));
-			branch = branch->next;
-		}
-		aux->content = new_branch;
+		to_free = aux->content;
+		aux->content = ft_list_to_str((t_list *)aux->content);
+		free(to_free);
 		aux = aux->next;
 	}
 	ft_display_parser(tree);

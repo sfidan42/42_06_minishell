@@ -60,7 +60,7 @@ t_list	*ft_custom_split(char *line, char *set)
 	while (indexes->next)
 	{
 		i = indexes->next->content - indexes->content;
-		if (1)
+		if (i)
 		{
 			sub = ft_substr(indexes->content, 0, i);
 			ft_lstadd_back(&ans, ft_lstnew(sub));
