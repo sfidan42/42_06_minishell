@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:40:14 by muerdoga          #+#    #+#             */
-/*   Updated: 2023/03/10 12:17:00 by muerdoga         ###   ########.fr       */
+/*   Updated: 2023/03/12 23:07:31 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ void	ft_minishell(char *line, char **envp)
 		}
 		ft_syntax_check(line);
 		tree = ft_lexer(line);
+		ft_display_tree(tree);
 		tree = ft_parser(tree);
+		ft_display_tree(tree);
 		tree = ft_expander(tree);
 		//ft_executor(tree, envp);
 		free(tree);

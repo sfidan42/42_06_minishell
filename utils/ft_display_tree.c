@@ -1,6 +1,6 @@
 #include "utils.h"
 
-void	ft_display_parser(t_list *tree)
+void	ft_display_tree(t_list *tree)
 {
 	char	**content;
 	
@@ -12,5 +12,5 @@ void	ft_display_parser(t_list *tree)
 		printf("\n");
 		tree = tree->next;
 	}
-	ft_putchar_fd('\n', 1);
+	printf("\n");
 }

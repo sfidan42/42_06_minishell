@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:54:44 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/08 16:23:50 by muerdoga         ###   ########.fr       */
+/*   Updated: 2023/03/12 23:07:18 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ void	ft_executor(t_list *tree, char **env);
 // helper utils
 t_list	*ft_custom_split(char *line, char *set);
 int		ft_quote_backslash(char *line, int i);
-void	ft_display_lexer(t_list *tree);
-void	ft_display_parser(t_list *tree);
+void	ft_display_tree(t_list *tree);
 void	ft_syntax_check(char *line);
-char	**ft_list_to_str(t_list *lst);
+char	**ft_lst_to_str(t_list *lst);
 
 #endif

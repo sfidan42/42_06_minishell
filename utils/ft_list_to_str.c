@@ -1,10 +1,12 @@
 #include "utils.h"
 
-char	**ft_list_to_str(t_list *lst)
+char	**ft_lst_to_str(t_list *lst)
 {
 	char	**str;
 	int		i;
+	void	*to_free;
 
+	to_free = lst;
 	str = malloc((ft_lstsize(lst) + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
@@ -15,5 +17,6 @@ char	**ft_list_to_str(t_list *lst)
 		lst = lst->next;
 	}
 	str[i] = NULL;
+	free(to_free);
 	return (str);
 }

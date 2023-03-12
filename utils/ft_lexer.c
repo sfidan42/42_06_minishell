@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lexer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muerdoga <muerdoga@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 18:15:02 by sfidan            #+#    #+#             */
-/*   Updated: 2023/03/07 15:38:49 by muerdoga         ###   ########.fr       */
+/*   Updated: 2023/03/12 23:16:32 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 t_list	*ft_lexer(char *line)
 {
+	char	**str;
 	t_list	*tree;
 	t_list	*sep;
 
@@ -21,9 +22,9 @@ t_list	*ft_lexer(char *line)
 	tree = NULL;
 	while (sep)
 	{
-		ft_lstadd_back(&tree, ft_lstnew(ft_custom_split(sep->content, "\t >|<")));
+		str = ft_lst_to_str(ft_custom_split(sep->content, "\t >|<"));
+		ft_lstadd_back(&tree, ft_lstnew(str));
 		sep = sep->next;
 	}
-	ft_display_lexer(tree);
 	return (tree);
 }
