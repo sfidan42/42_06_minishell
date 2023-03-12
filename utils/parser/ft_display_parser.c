@@ -1,9 +1,9 @@
-#include "utils.h"
+#include "parser.h"
 
-void	ft_display_tree(t_list *tree)
+void	ft_display_parser(t_list *tree)
 {
 	char	**content;
-	
+
 	while (tree)
     {
 		content = (char **)tree->content;

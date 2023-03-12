@@ -6,7 +6,7 @@
 /*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:13:47 by muerdoga          #+#    #+#             */
-/*   Updated: 2023/03/12 23:35:19 by sadettin         ###   ########.fr       */
+/*   Updated: 2023/03/13 00:10:45 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,17 @@ t_list	*ft_custom_split(char *line, char *set)
 	ans = NULL;
 	while (indexes->next)
 	{
-		i = indexes->next->content - indexes->content;
-		if (i)
+		sub = (char *)indexes->content;
+		flag = 0;
+		while ((void *)sub != indexes->next->content)
+			if (*sub++ != ' ')
+				{
+					flag = 1;
+					break;
+				}
+		if (flag)
 		{
-			sub = ft_substr(indexes->content, 0, i);
+			sub = ft_substr(indexes->content, 0, indexes->next->content - indexes->content);
 			ft_lstadd_back(&ans, ft_lstnew(sub));
 		}	
 		indexes = indexes->next;
