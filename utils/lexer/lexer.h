@@ -1,6 +1,7 @@
 #ifndef LEXER_H
 # define LEXER_H
 # include "../../libft/libft.h"
+# include <stdio.h>
 
 t_list	*ft_lexer(char *line);
 
