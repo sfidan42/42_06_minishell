@@ -12,6 +12,7 @@ typedef struct s_parse
 
 t_list	*ft_parser(t_list *tree);
 
+t_parse	*ft_new_parse(void);
 void	ft_display_parser(t_list *tree);
 
 #endif

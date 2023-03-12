@@ -1,5 +1,12 @@
 {
     "files.associations": {
         "parser.h": "c"
-    }
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/sadettin/my github repos/public/minishell",
+            "binaryPath": "/home/sadettin/my github repos/public/minishell/minishell",
+            "binaryArgs": []
+        }
+    ]
 }
