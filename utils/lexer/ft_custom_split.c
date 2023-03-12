@@ -6,7 +6,7 @@
 /*   By: sadettin <sadettin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:13:47 by muerdoga          #+#    #+#             */
-/*   Updated: 2023/03/13 00:10:45 by sadettin         ###   ########.fr       */
+/*   Updated: 2023/03/13 00:14:31 by sadettin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void	f(void *content)
 t_list	*ft_custom_split(char *line, char *set)
 {
 	int		flag;
-	int		i;
-	char	*sub;
+	char	*s;
 	t_list	*ans;
 	t_list	*indexes;
 
@@ -39,18 +38,19 @@ t_list	*ft_custom_split(char *line, char *set)
 			flag = 0;
 		if (flag == 0)
 		{
-			i = 0;
-			while (set[i])
+			s = set;
+			while (*set)
 			{
-				if (*line == set[i] && *(line - 1) != '\\')
+				if (*line == *set && *(line - 1) != '\\')
 				{
 					ft_lstadd_back(&indexes, ft_lstnew(line));
-					while (*line == set[i])
+					while (*line == *set)
 						line++;
 					ft_lstadd_back(&indexes, ft_lstnew(line--));
 				}
-				i++;
+				set++;
 			}
+			set = s;
 		}
 		line++;
 	}
@@ -59,18 +59,18 @@ t_list	*ft_custom_split(char *line, char *set)
 	ans = NULL;
 	while (indexes->next)
 	{
-		sub = (char *)indexes->content;
+		s = (char *)indexes->content;
 		flag = 0;
-		while ((void *)sub != indexes->next->content)
-			if (*sub++ != ' ')
+		while ((void *)s != indexes->next->content)
+			if (*s++ != ' ')
 				{
 					flag = 1;
 					break;
 				}
 		if (flag)
 		{
-			sub = ft_substr(indexes->content, 0, indexes->next->content - indexes->content);
-			ft_lstadd_back(&ans, ft_lstnew(sub));
+			s = ft_substr(indexes->content, 0, indexes->next->content - indexes->content);
+			ft_lstadd_back(&ans, ft_lstnew(s));
 		}	
 		indexes = indexes->next;
 	}
