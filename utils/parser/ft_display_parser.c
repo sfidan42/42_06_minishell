@@ -15,8 +15,8 @@ void	ft_display_parser(t_list *tree)
 		{
 			parse = *(t_parse *)branch->content;
 			printf("node %d:\n", i++);
-			printf("fd of input file: %d\n", parse.fd_infile);
-			printf("fd of output file: %d\n", parse.fd_outfile);
+			printf("fd of input file: %d\n", parse.fd_in);
+			printf("fd of output file: %d\n", parse.fd_out);
 			printf("argv: ");
 			argv = parse.argv;
 			while (*argv)

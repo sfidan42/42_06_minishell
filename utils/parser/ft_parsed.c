@@ -14,15 +14,19 @@ t_list	*ft_parsed(char **str)
 	while (str[i])
 	{
 		if (str[i][0] == '>')
+		{
 			if (str[i][1] == '>')
 				p->fd_in = open(str[++i], O_CREAT | O_WRONLY | O_APPEND, 0777);
-		else
-			p->fd_in = open(str[++i], O_CREAT | O_WRONLY, 0777);
+			else
+				p->fd_in = open(str[++i], O_CREAT | O_WRONLY, 0777);
+		}
 		else if (str[i][0] == '<')
+		{
 			if (str[i][1] == '<')
 				p->eof = str[++i];
-		else
-			p->fd_out = open(str[++i], O_CREAT | O_RDONLY, 0777);
+			else
+				p->fd_out = open(str[++i], O_CREAT | O_RDONLY, 0777);
+		}
 		else if (str[i][0] == '|')
 		{
 			p->argv = ft_lst_to_str(argv);
